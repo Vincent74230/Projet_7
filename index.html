@@ -1,25 +1,25 @@
 <!DOCTYPE Html>
-<!DOCTYPE html>
 <html>
 <head>
     <title>GrandPy</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
     <header>
         <p>GrandPy Bot</p>
+        <div id = "papy">
         <img src = "images/oldrobot.jpg" alt = "robot"/>
-        <p>Le papy robot</p>
+        </div>
+        <p id = "le_papy_robot">Le papy robot</p>
     </header>
     <section>
-        <form method = "post" action = "traitement.php">
-            <p id="survey">
-                <label for= "question">Posez votre question à GrandPy</label><br/>
-                <textarea name="question" id="question"></textarea>
-                <input type="submit" value = "Envoyer"/>
-            </p>
+        <form id = 'form'>
+            <label for= "question">Posez votre question à GrandPy</label><br/>
+            <input name="question" id="question"></input><br/>
+            <input type="submit" value="Envoyer" id="button"/>
         </form>
         
     </section>
@@ -28,10 +28,10 @@
             <img src = "images/logo_github.png"/></a>
         <img src = "images/logo_oc.png" alt = "logo_openclassrooms"/>
         <img src = "images/logo_python.jpeg" alt = "python"/>
-        <p class = "auteur">Auteur :<br/> Vincent NOWACZYK<br/>Etudiant OPENCLASSROOMS<br/><br/>Parcours:<br/>
+        <p class = "auteur"><em>Auteur</em> :<br/> Vincent NOWACZYK<br/>Etudiant OPENCLASSROOMS<br/><br/><em>Parcours</em>:<br/>
         DA Python/Django</p>
     </footer>
-
+<script src="dynamic.js" > </script>
 </body>
 
 </html>

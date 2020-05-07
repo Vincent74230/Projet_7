@@ -25,6 +25,7 @@ footer
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-top: 2px solid black;
 }
 .auteur
 {
@@ -33,6 +34,9 @@ footer
     max-width: 25%;
     font-size: 1em;
     border-radius: 10px/20px;
+    font-family: verdana, arial, sans-serif;
+    padding: 2px 2px 2px 2px;
+    box-shadow: 6px 6px 6px;
 }
 span
 {
@@ -40,10 +44,38 @@ span
 }
 textarea
 {
-    width: 400px;
+    width: 350px;
     height: 200px;
 }
 form
 {
     text-align:center;
+}
+
+em
+{
+    font-style: normal;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1280px)
+{
+    header
+    {
+        font-size: 4em;
+    }
+    #le_papy_robot
+    {
+        display:none;
+    }
+    #papy
+    {
+        display : none;
+    }
+    
+    footer
+    {
+        flex-direction: column;
+    }
+
 }
