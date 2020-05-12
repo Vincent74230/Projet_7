@@ -1,7 +1,4 @@
-
-// google maps api key = AIzaSyBvjVqsDCXUG3xGNdZai3lQBkekuMbUAfk
-// api request example = "https://maps.googleapis.com/maps/api/staticmap?center=pyramide de gizeh&zoom=14&size=400x400&key=AIzaSyBvjVqsDCXUG3xGNdZai3lQBkekuMbUAfk"
-
+//The code below is responsible for retreiving user's question.
 let button = document.getElementById("button");
 let form = document.getElementById("form");
 let text = document.getElementById("question");
@@ -12,27 +9,31 @@ var img = document.createElement("img");
 form.addEventListener("submit", function(e){
 
     e.preventDefault();
-    var myString1 = "https://maps.googleapis.com/maps/api/staticmap?center=";
-    var myString2 = "&zoom=14&size=400x400&key=AIzaSyBvjVqsDCXUG3xGNdZai3lQBkekuMbUAfk";
-    myString = myString1+text.value+myString2;
+    myString = text.value
 
-    img.src = myString;
-    googleMap.appendChild(img);
+    console.log(text.value);
     text.value = '';
 });
+/////////////////////////////////////////////////////////////////
 
-/*
-var map;
-var xhr = new XMLHttpRequest();
-xhr.addEventListener('readystatechange', function(){
-    if (xhr.readyState === 4 && xhr.status === 200){
-        map = xhr;
-    }
-        
+
+//The code below is responsible for asking a map to google api and displaying it
+//it takes 2 numbers : lontitude and latitude
+////////////////////////////////////////////////////////////////////
+// Creating the script tag, setting the appropriate attributes
+var script = document.createElement("script");
+script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBvjVqsDCXUG3xGNdZai3lQBkekuMbUAfk&callback=initMap';
+script.defer = true;
+script.async = true;
+// google maps api key = AIzaSyBvjVqsDCXUG3xGNdZai3lQBkekuMbUAfk
+//attaching the callback function to the 'window' object
+window.initMap = function() {
+    map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
 });
+}
 
-xhr.open('get', "https://maps.googleapis.com/maps/api/staticmap?center=Chicago&zoom=14&size=400x400&key=************************");
-xhr.send();
-*/
-
-
+// Append the 'script' element to 'head'
+document.head.appendChild(script);
+////////////////////////////////////////////////////////////////////
