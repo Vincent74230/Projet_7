@@ -29,11 +29,13 @@ script.async = true;
 //attaching the callback function to the 'window' object
 window.initMap = function() {
     map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          center: {lat:10.000 , lng:10.000},
+          zoom: 10
 });
+    console.log(script);
+    console.log(map.status);
 }
-
+console.log(script);
 // Append the 'script' element to 'head'
 document.head.appendChild(script);
 ////////////////////////////////////////////////////////////////////
