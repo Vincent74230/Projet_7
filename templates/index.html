@@ -3,7 +3,7 @@
 <head>
     <title>GrandPy</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}">
     
 </head>
 
@@ -11,7 +11,7 @@
     <header>
         <p>GrandPy Bot</p>
         <div id = "papy">
-        <img src = "images/oldrobot.jpg" alt = "robot"/>
+        <img src = "{{url_for('static',filename='images/oldrobot.jpg')}}" alt = "robot"/>
         </div>
         <p id = "le_papy_robot">Le papy robot</p>
     </header>
@@ -27,13 +27,13 @@
     </section>
     <footer>
         <a href = "https://github.com/Vincent74230/Projet_7" title = "Lien vers le repo github du Projet_7" target = "_blank">
-            <img src = "images/logo_github.png"/></a>
-        <img src = "images/logo_oc.png" alt = "logo_openclassrooms"/>
-        <img src = "images/logo_python.jpeg" alt = "python"/>
+            <img src = "{{url_for('static',filename='images/logo_github.png')}}"/></a>
+        <img src = "{{url_for('static',filename='images/logo_oc.png')}}" alt = "logo_openclassrooms"/>
+        <img src = "{{url_for('static',filename='images/logo_python.jpeg')}}" alt = "python"/>
         <p class = "auteur"><em>Auteur</em> :<br/> Vincent NOWACZYK<br/>Etudiant OPENCLASSROOMS<br/><br/><em>Parcours</em>:<br/>
         DA Python/Django</p>
     </footer>
-<script src="dynamic.js" > </script>
+<script src="{{url_for('static', filename = 'dynamic.js')}}" > </script>
 </body>
 
 </html>

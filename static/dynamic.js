@@ -29,8 +29,8 @@ script.async = true;
 //attaching the callback function to the 'window' object
 window.initMap = function() {
     map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat:10.000 , lng:10.000},
-          zoom: 10
+          center: {lat:45.889 , lng:6.129},
+          zoom: 12
 });
     console.log(script);
     console.log(map.status);
