@@ -1,3 +1,5 @@
+
+/*
 //The code below is responsible for retreiving user's question.
 let button = document.getElementById("button");
 let form = document.getElementById("form");
@@ -15,7 +17,7 @@ form.addEventListener("submit", function(e){
     text.value = '';
 });
 /////////////////////////////////////////////////////////////////
-
+*/
 
 //The code below is responsible for asking a map to google api and displaying it
 //it takes 2 numbers : lontitude and latitude
