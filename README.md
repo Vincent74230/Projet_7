@@ -1,7 +1,17 @@
-# Projet_7
+#GrandPy Bot
+##Project 7 of the Python/Django Openclassrooms training
+##Be nice with him, he has a 486sx 25 Mhz as brain
 
-Link : www.grandpybot.fr
+---
 
-GrandPy_Bot
+###How do we install it?
 
-First lines of a long run..
+First open a console and place yourself in a folder
+
+Second create a virtual env
+
+THird copy or clone project
+
+
+
+[Vincent's github](https://github.com/Vincent74230/Projet_7)
