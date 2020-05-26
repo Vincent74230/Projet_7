@@ -3,8 +3,6 @@
 let form = document.getElementById("form");
 let text = document.getElementById("question");
 
-
-
 form.addEventListener("submit", function(e){
 
     e.preventDefault();
@@ -13,12 +11,10 @@ form.addEventListener("submit", function(e){
     console.log(question)
     let users_question = new FormData();
     users_question.append("question", question);
-    console.log(users_question);
     let request = new XMLHttpRequest();
     request.open("POST", "/users_question");
     request.send(users_question);
     text.value = '';
-
 });
 /////////////////////////////////////////////////////////////////
 
