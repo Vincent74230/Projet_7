@@ -8,12 +8,13 @@ form.addEventListener("submit", function(e){
     e.preventDefault();
 
     let question = text.value
-    console.log(question)
+    //console.log(question)
     let users_question = new FormData();
     users_question.append("question", question);
     let request = new XMLHttpRequest();
     request.open("POST", "/users_question");
     request.send(users_question);
+    console.log(request)
     text.value = '';
 });
 /////////////////////////////////////////////////////////////////
