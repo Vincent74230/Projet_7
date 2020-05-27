@@ -13,7 +13,6 @@ def search():
     if request.method == 'POST':
         users_question = request.form['question']
         magic_word = parser(users_question)
-        print (get_position(magic_word))
         return get_position(magic_word)
 
 if __name__ == '__main__':
