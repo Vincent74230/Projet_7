@@ -6,13 +6,13 @@ def parser(users_question):
     decomposed_question = users_question.split(" ")
 
     
-    temporary_list = []
+    removable_words = []
     for word in decomposed_question:
         for stop_word in stop_words:
             if word == stop_word:
-                temporary_list.append(word)
+                removable_words.append(word)
 
-    for word in temporary_list:
+    for word in removable_words:
         decomposed_question.remove(word)
 
     magic_word = " ".join(decomposed_question)
