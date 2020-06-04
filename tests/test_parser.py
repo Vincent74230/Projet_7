@@ -10,7 +10,7 @@ class Test_parser:
     def test_tree_words_response(self):#must return 3 words
         magic_words=parser("Tell me about the arc de triomphe GrandPy please")
         assert magic_words == "arc de triomphe"
-"""
+
     def test_no_special_characters(self):#must return a 'clean' sentence with no punctuation
         magic_words=parser("Hello GrandPy, can you tell me about the gizah pyramids? `,~,!,@,#,$,%,^,&,*,(,),_,-,+,=,{,[,},},|,:,;,',<>,.,?,/#")
         assert magic_words == "gizah pyramids"
@@ -30,4 +30,3 @@ class Test_parser:
     def test_no_single_letter(self):#single letters : destroy them with lasers!!
         magic_words=parser("Hi grandpy, a b  c  d  e  A Z O    P washington")
         assert magic_words == "washington"
-"""

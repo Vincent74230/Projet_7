@@ -71,6 +71,7 @@ em
 {
     height: 400px;
     width: 400px;
+    overflow: auto;
 }
 #main_display
 {
@@ -96,5 +97,4 @@ em
     {
         flex-direction: column;
     }
-
 }

@@ -19,10 +19,12 @@ function googleMaps (lat,lng){
     document.head.appendChild(script);
     }
 
-
-
 function displayQuestion (text){
     displayBox.innerHTML += text+'<br>';
+}
+
+function speech_bubbles (users_question, grandpy_response){
+    
 }
 
 form.addEventListener("submit", function(e){
@@ -34,10 +36,9 @@ form.addEventListener("submit", function(e){
     request.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
             data=this.response;
-            console.log(data.address);
-            console.log(data.position.lat);
-            googleMaps(data.position.lat, data.position.lng);
-            displayAddress.innerHTML = 'This is the address of this place:<br>'+data.address;
+            console.log(data);
+            googleMaps(data.geoloc.position.lat, data.geoloc.position.lng);
+            displayAddress.innerHTML = 'This is the address of this place:<br>'+data.geoloc.address+data.bla_bla;
         }
     }
 
@@ -47,6 +48,4 @@ form.addEventListener("submit", function(e){
     displayQuestion(question);
     
     text.value = '';
-    
-
 });
