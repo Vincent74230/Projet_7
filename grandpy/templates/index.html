@@ -13,19 +13,18 @@
         <div id = "papy">
         <img src = "{{url_for('static',filename='images/oldrobot.jpg')}}" alt = "robot"/>
         </div>
-        <p id = "le_papy_robot">Le papy robot</p>
+        <p id = "le_papy_robot">the old robot</p>
     </header>
     <section>
         <form id = 'form'>
-            <label for= "question">Posez votre question à GrandPy</label><br/>
-            <input name="question" id="question"></input><br/>
-            <input type="submit" value="Envoyer" id="button"/>
+            <label for= "question">GrandPy was a great traveler, ask him a question about a place in the world</label><br/>
+            <input name="question" id="question" placeholder = "ex: GrandPy tell me about Paris"></input><br/>
+            <input type="submit" value="Submit" id="button"/>
         </form>
 
-        <div id= main_display>
-        <div id = "map"></div>
-        <p id = "display">Your question to GrandPy:<br></p>
-        <p id = "address"></p>
+        <div id= "main_display">
+            <div id = "map"></div>
+            <div id = "speechBox"></div>
         </div>
     </section>
     <footer>

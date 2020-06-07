@@ -1,7 +1,6 @@
 let form = document.getElementById("form");
 let text = document.getElementById("question");
-let displayBox = document.getElementById("display");
-let displayAddress = document.getElementById('address');
+let speechBox = document.getElementById("speechBox");
 
 function googleMaps (lat,lng){
     var script = document.createElement("script");
@@ -19,12 +18,23 @@ function googleMaps (lat,lng){
     document.head.appendChild(script);
     }
 
-function displayQuestion (text){
-    displayBox.innerHTML += text+'<br>';
-}
 
 function speech_bubbles (users_question, grandpy_response){
-    
+    let newUserQuestionBox = document.createElement("div");
+    newUserQuestionBox.classList.add("userSpeechBox");
+    speechBox.appendChild(newUserQuestionBox);
+    let newUserQuestion = document.createElement("p");
+    newUserQuestion.classList.add("userQuestion");
+    newUserQuestionBox.appendChild(newUserQuestion);
+    newUserQuestion.innerHTML = users_question;
+
+    let newGrandpyResponseBox = document.createElement("div");
+    newGrandpyResponseBox.classList.add("grandPySpeechBox");
+    speechBox.appendChild(newGrandpyResponseBox);
+    let newGrandpyAnswer = document.createElement("p");
+    newGrandpyAnswer.classList.add("grandPyAnswer");
+    newGrandpyResponseBox.appendChild(newGrandpyAnswer);
+    newGrandpyAnswer.innerHTML = grandpy_response;
 }
 
 form.addEventListener("submit", function(e){
@@ -36,16 +46,18 @@ form.addEventListener("submit", function(e){
     request.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
             data=this.response;
-            console.log(data);
             googleMaps(data.geoloc.position.lat, data.geoloc.position.lng);
-            displayAddress.innerHTML = 'This is the address of this place:<br>'+data.geoloc.address+data.bla_bla;
+            speech_bubbles(question,'hello youngster, the address of this place is:'+data.geoloc.address+data.bla_bla);
         }
     }
 
     request.open("POST", "/users_question");
     request.responseType = "json";
     request.send(users_question);
-    displayQuestion(question);
     
     text.value = '';
 });
+
+
+
+//displayAddress.innerHTML = 'This is the address of this place:<br>'+data.geoloc.address+data.bla_bla;
