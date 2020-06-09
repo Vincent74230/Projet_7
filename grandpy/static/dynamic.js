@@ -2,22 +2,17 @@ let form = document.getElementById("form");
 let text = document.getElementById("question");
 let speechBox = document.getElementById("speechBox");
 
-function googleMaps (lat,lng){
-    var script = document.createElement("script");
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBvjVqsDCXUG3xGNdZai3lQBkekuMbUAfk&callback=initMap';
-    script.defer = true;
-    script.async = true;
-    //attaching the callback function to the 'window' object
-    window.initMap = function() {
-        map = new google.maps.Map(document.getElementById('map'), {
-              center: {lat:lat, lng:lng},
-              zoom: 12
+function googleMaps (latitude,longitude){
+    const coordinates = {lat:latitude, lng:longitude};
+    const map = new google.maps.Map(document.getElementById("map"),{
+        center: coordinates,
+        zoom: 12
     });
-    }
-    // Append the 'script' element to 'head'
-    document.head.appendChild(script);
-    }
-
+    const marker = new google.maps.Marker({
+        position: coordinates,
+        map:map
+    });
+}
 
 function speech_bubbles (users_question, grandpy_response){
     let newUserQuestionBox = document.createElement("div");
@@ -57,7 +52,3 @@ form.addEventListener("submit", function(e){
     
     text.value = '';
 });
-
-
-
-//displayAddress.innerHTML = 'This is the address of this place:<br>'+data.geoloc.address+data.bla_bla;
