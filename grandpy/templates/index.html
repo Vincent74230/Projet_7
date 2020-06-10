@@ -18,9 +18,10 @@
     <section>
         <form id = 'form'>
             <label for= "question">GrandPy was a great traveler, ask him a question about a place in the world</label><br/>
-            <input name="question" id="question" placeholder = "ex: GrandPy tell me about Paris"></input><br/>
+            <input name="question" id="question" placeholder = "ex: GrandPy, tell me about Paris."></input><br/>
             <input type="submit" value="Submit" id="button"/>
         </form>
+        <div id="loading"></div>
 
         <div id= "main_display">
             <div id = "map"></div>
@@ -28,12 +29,14 @@
         </div>
     </section>
     <footer>
-        <a href = "https://github.com/Vincent74230/Projet_7" title = "Lien vers le repo github du Projet_7" target = "_blank">
+        <a href = "https://github.com/Vincent74230/Projet_7" title = "Link to my repo github" target = "blank">
             <img src = "{{url_for('static',filename='images/logo_github.png')}}"/></a>
-        <img src = "{{url_for('static',filename='images/logo_oc.png')}}" alt = "logo_openclassrooms"/>
+        <a href = "https://openclassrooms.com" target = "blank">
+        <img src = "{{url_for('static',filename='images/logo_oc.png')}}" alt = "logo_openclassrooms"/></a>
         <img src = "{{url_for('static',filename='images/logo_python.jpeg')}}" alt = "python"/>
-        <p class = "auteur"><em>Auteur</em> :<br/> Vincent NOWACZYK<br/>Etudiant OPENCLASSROOMS<br/><br/><em>Parcours</em>:<br/>
-        DA Python/Django</p>
+        <a href = "https://www.linkedin.com/in/vincent-nowaczyk" title = "linkedin" target='blank'>
+        <p class = "auteur"><em>Author</em> :<br/> Vincent NOWACZYK<br/>OPENCLASSROOMS Student<br/><br/><em>Training</em>:<br/>
+        Python/Django</p></a>
     </footer>
 <script src="{{url_for('static', filename = 'dynamic.js')}}" > </script>
 <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBvjVqsDCXUG3xGNdZai3lQBkekuMbUAfk"></script>

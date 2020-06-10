@@ -1,6 +1,8 @@
 let form = document.getElementById("form");
 let text = document.getElementById("question");
 let speechBox = document.getElementById("speechBox");
+let loadingGif = document.getElementById("loading");
+
 
 function googleMaps (latitude,longitude){
     const coordinates = {lat:latitude, lng:longitude};
@@ -40,13 +42,20 @@ form.addEventListener("submit", function(e){
     let request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
+
             data=this.response;
             googleMaps(data.geoloc.position.lat, data.geoloc.position.lng);
-            speech_bubbles(question,'hello youngster, the address of this place is:'+data.geoloc.address+data.bla_bla);
+            speech_bubbles(question,data.grandpy_sentence+data.geoloc.address+"<br/>"+data.bla_bla);
         }
+        else {
+            let load = document.createElement('img');
+            load.src = "{{url_for('static',filename='images/loading.gif')}}";
+            loadingGif.appendChild(load);
+        }
+        
     }
 
-    request.open("POST", "/users_question");
+    request.open("POST", "/users_question", true);
     request.responseType = "json";
     request.send(users_question);
     

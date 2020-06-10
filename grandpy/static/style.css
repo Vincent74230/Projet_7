@@ -120,8 +120,24 @@ em
     {
         display : none;
     }
+    #map
+    {
+       height: 400px;
+        width: 400px; 
+    }
+    #speechBox
+    {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 2px 2px 2px;
+    min-width: 600px;
+    height: auto;
+    }
 
-    
+    #main_display
+    {
+        flex-direction: column;
+    }
     footer
     {
         flex-direction: column;
