@@ -1,3 +1,4 @@
+'''Only one class in this module : it tests the parser'''
 from grandpy.parser import parser
 
 class Test_parser:
@@ -8,21 +9,21 @@ class Test_parser:
         assert magic_word == "openclassrooms"
 
     def test_tree_words_response(self):#must return 3 words
-        magic_words=parser("Tell me about the eiffel tower GrandPy please")
+        magic_words = parser("Tell me about the eiffel tower GrandPy please")
         assert magic_words == "eiffel tower"
 
     def test_no_special_characters(self):#must return a 'clean' sentence with no punctuation
-        magic_words=parser("Hello GrandPy, can you tell me about the gizah pyramids?")
+        magic_words = parser("Hello GrandPy, can you tell me about the gizah pyramids?")
         assert magic_words == "gizah pyramids"
 
     def test_no_unuseful_spaces(self):#tests if parser returns a sentence with no unuseful spaces
-        magic_words=parser("Hello Grandpy, where is the san       Francisco              golden gate    ? ")
+        magic_words = parser("Hello Grandpy, where is the san       Francisco              golden gate    ? ")
         assert magic_words == "san francisco golden gate"
 
     def test_no_numbers(self):#numbers not allowed in user's question..
-        magic_words=parser("Hi grandpy, the Everest mountain, is it 8848 ?")
+        magic_words = parser("Hi grandpy, the Everest mountain, is it 8848 ?")
         assert magic_words == "everest"
 
     def test_no_single_letter(self):#single letters : destroy them with lasers!!
-        magic_words=parser("Hi grandpy, a b  c  d  e  A Z O    P washington")
+        magic_words = parser("Hi grandpy, a b  c  d  e  A Z O    P washington")
         assert magic_words == "washington"

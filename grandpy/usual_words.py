@@ -1,3 +1,4 @@
+'''Usual words of english language, parser uses it to work with'''
 #coding : utf-8
 
 stop_words=['', "'ll", "'ve", 'I', 'a', "a's", 'able', 'about', 'above', 'abst', 'accordance', 'according', 'accordingly', 'across', 'act', 'actually', 

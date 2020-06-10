@@ -1,14 +1,16 @@
+'''App's parser, imports a list to work with'''
 from .usual_words import stop_words
-punctuations = ['`','~','!','@','$','%','^','&','*','(',')','_','-','+','=','{','[','}','}','|',':',';',
-'<','>','.','?','/',',','1','2','3','4','5','6','7','8','9','0']
+PUNCTUATIONS = ['`', '~', '!', '@', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '{', '[', '}', '}', '|', ':', ';',
+                '<', '>', '.', '?', '/', ',', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
 
 def parser(users_question):
+    """Parser : takes a sentence as entry and return simple words"""
     users_question = users_question.lower()
     elements = list(users_question)
-    removable_elements=[]
+    removable_elements = []
     for element in elements:
-        for punctuation in punctuations:
+        for punctuation in PUNCTUATIONS:
             if element == punctuation:
                 removable_elements.append(element)
 

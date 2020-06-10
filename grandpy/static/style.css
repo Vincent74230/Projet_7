@@ -2,7 +2,6 @@
     font-family: 'heavy_dataregular';
     src: url('fonts/heavy_data-webfont.eot');
     src: url('fonts/heavy_data-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/heavy_data-webfont.woff2') format('woff2'),
          url('fonts/heavy_data-webfont.woff') format('woff'),
          url('fonts/heavy_data-webfont.ttf') format('truetype'),
          url('fonts/heavy_data-webfont.svg#heavy_dataregular') format('svg');
@@ -130,7 +129,7 @@ em
     display: flex;
     flex-direction: column;
     padding: 2px 2px 2px 2px;
-    min-width: 600px;
+    min-width: 400px;
     height: auto;
     }
 

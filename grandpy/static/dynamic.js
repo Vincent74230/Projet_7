@@ -42,15 +42,15 @@ form.addEventListener("submit", function(e){
     let request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
-
+            loadingGif.hidden = true;
             data=this.response;
+            if (data.parser_answer == 'ok'){
             googleMaps(data.geoloc.position.lat, data.geoloc.position.lng);
-            speech_bubbles(question,data.grandpy_sentence+data.geoloc.address+"<br/>"+data.bla_bla);
+            speech_bubbles(question,data.grandpy_sentence+data.geoloc.address+"<br/>"+data.bla_bla)}
+            else {speech_bubbles(question,data.grandpy_sentence)};
         }
         else {
-            let load = document.createElement('img');
-            load.src = "{{url_for('static',filename='images/loading.gif')}}";
-            loadingGif.appendChild(load);
+            loadingGif.hidden = false;
         }
         
     }

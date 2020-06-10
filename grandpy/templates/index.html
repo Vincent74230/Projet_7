@@ -21,7 +21,7 @@
             <input name="question" id="question" placeholder = "ex: GrandPy, tell me about Paris."></input><br/>
             <input type="submit" value="Submit" id="button"/>
         </form>
-        <div id="loading"></div>
+        <div id="loading" hidden><img src = "{{url_for('static',filename='images/loading.gif')}}"></div>
 
         <div id= "main_display">
             <div id = "map"></div>
