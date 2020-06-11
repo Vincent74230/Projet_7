@@ -45,13 +45,17 @@ form.addEventListener("submit", function(e){
             loadingGif.hidden = true;
             data=this.response;
             if (data.parser_answer == 'ok'){
-            googleMaps(data.geoloc.position.lat, data.geoloc.position.lng);
-            speech_bubbles(question,data.grandpy_sentence+data.geoloc.address+"<br/>"+data.bla_bla)}
+                if (data.geoloc == 'not_ok'){speech_bubbles(question,data.bla_bla)}
+                else{
+                    googleMaps(data.geoloc.position.lat, data.geoloc.position.lng);
+                    speech_bubbles(question,data.grandpy_sentence+data.geoloc.address+"<br/>"+data.bla_bla)
+                };
+            }
             else {speech_bubbles(question,data.grandpy_sentence)};
         }
         else {
             loadingGif.hidden = false;
-        }
+        };
         
     }
 

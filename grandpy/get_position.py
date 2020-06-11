@@ -6,6 +6,9 @@ def get_position(place_in_the_world):
     payload = {'address':place_in_the_world, 'key':'AIzaSyBvjVqsDCXUG3xGNdZai3lQBkekuMbUAfk'}
     response = requests.get('https://maps.googleapis.com/maps/api/geocode/json', params=payload)
     if response.status_code == 200:
-        response = response.json()
-        response = response['results'][0]
-        return {'address':response['formatted_address'], 'position':response['geometry']['location']}
+        try:
+            response = response.json()
+            response = response['results'][0]
+            return {'address':response['formatted_address'], 'position':response['geometry']['location']}
+        except Exception:
+            return None
