@@ -17,10 +17,12 @@ def grandpy_answer():
 
 @app.route('/')
 def home():
+    '''leads to home page'''
     return render_template('index.html')
 
 @app.route('/users_question', methods=['POST'])
 def search():
+    '''leads to user question'''
     position = Get_position()
     description = Get_wiki_summary()
     if request.method == 'POST':
@@ -37,33 +39,9 @@ def search():
                             'bla_bla' : "I know where it is but I can't remember any story about that..", 
                             'grandpy_sentence' : grandpy_answer(), 'parser_answer' : 'ok'}
             else:
-                return {'geoloc' : 'not_ok' , 
+                return {'geoloc' : 'not_ok', 
                         'bla_bla' : "Say it again son, I only have an Intel 486 as brain..", 
                         'parser_answer' : 'ok'}
         else:
             return {'grandpy_sentence' : "Ask me a question please, type it in the little window..", 
                     'parser_answer' : 'not_ok'}
-"""
-@app.route('/users_question', methods=['POST'])
-def search():
-    if request.method == 'POST':
-        users_question = request.form['question']
-        place_in_the_world = parser(users_question)
-        if place_in_the_world:
-            if get_position(place_in_the_world):
-                if get_wiki_summary(place_in_the_world):
-                    return {'geoloc' : get_position(place_in_the_world), 
-                            'bla_bla' : get_wiki_summary(place_in_the_world), 
-                            'grandpy_sentence' : grandpy_answer(), 'parser_answer':'ok'}
-                else:
-                    return {'geoloc' : get_position(place_in_the_world), 
-                            'bla_bla' : "I know where it is but I can't remember any story about that..", 
-                            'grandpy_sentence' : grandpy_answer(), 'parser_answer' : 'ok'}
-            else:
-                return {'geoloc' : 'not_ok' , 
-                        'bla_bla' : "Say it again son, I only have an Intel 486 as brain..", 
-                        'parser_answer' : 'ok'}
-        else:
-            return {'grandpy_sentence' : "Ask me a question please, type it in the little window..", 
-                    'parser_answer' : 'not_ok'}
-"""
