@@ -1,12 +1,11 @@
 #coding : UTF-8
 import requests
-from config import API_KEY
-
+import os
 
 class Get_position:
     '''class that fetches lontitude and latitude of a place in the world, returns a json'''
     def send_request(self, place_in_the_world):
-        payload = {'address':place_in_the_world, 'key':API_KEY}
+        payload = {'address':place_in_the_world, 'key':os.environ.get('API_KEY')}
         response = requests.get('https://maps.googleapis.com/maps/api/geocode/json', params=payload)
         if response.status_code == 200:
             try:
