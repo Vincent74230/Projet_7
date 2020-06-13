@@ -2,6 +2,9 @@
 import requests
 import os
 
+print (os.environ.get('API_KEY'))
+
+
 class Get_position:
     '''class that fetches lontitude and latitude of a place in the world, returns a json'''
     def send_request(self, place_in_the_world):
